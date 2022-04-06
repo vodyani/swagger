@@ -1,5 +1,5 @@
-import { BaseClass, getDefaultObject, isValidArray } from '@vodyani/core';
 import { Injectable, INestApplication } from '@nestjs/common';
+import { BaseClass, getDefaultObject, isValidArray } from '@vodyani/core';
 import { DocumentBuilder, SwaggerDocumentOptions, SwaggerModule } from '@nestjs/swagger';
 
 import { VOContainer } from '../base';
@@ -9,16 +9,11 @@ import { BaseSwaggerOptions } from '../common';
 export class BaseSwagger {
   private extraModels = VOContainer.discovery();
 
-  constructor(
-    application: INestApplication,
-    options: BaseSwaggerOptions,
-  ) {
-    const { enable, extraModels, documentOptions, documentRouter, documentConfig } = options;
+  public deploy(application: INestApplication, options: BaseSwaggerOptions) {
+    const { extraModels, documentOptions, documentRouter, documentConfig } = options;
 
-    if (enable) {
-      this.deployDefaultVo(extraModels);
-      this.deployWithApplication(application, documentOptions, documentRouter, documentConfig);
-    }
+    this.deployDefaultVo(extraModels);
+    this.deployWithApplication(application, documentOptions, documentRouter, documentConfig);
   }
 
   private deployDefaultVo(extraModels: BaseClass[]) {
