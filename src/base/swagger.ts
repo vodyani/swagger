@@ -1,5 +1,7 @@
+import { Class } from '@vodyani/core';
+import { isValidArray } from '@vodyani/validator';
+import { getDefaultObject } from '@vodyani/transformer';
 import { Injectable, INestApplication } from '@nestjs/common';
-import { BaseClass, getDefaultObject, isValidArray } from '@vodyani/core';
 import { DocumentBuilder, SwaggerDocumentOptions, SwaggerModule } from '@nestjs/swagger';
 
 import { VOContainer } from '../base';
@@ -16,7 +18,7 @@ export class BaseSwagger {
     this.deployWithApplication(application, documentOptions, documentRouter, documentConfig);
   }
 
-  private deployDefaultVo(extraModels: BaseClass[]) {
+  private deployDefaultVo(extraModels: Class[]) {
     if (isValidArray(extraModels)) {
       extraModels.forEach(vo => {
         this.extraModels.push(vo);

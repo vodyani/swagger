@@ -1,10 +1,10 @@
-import { BaseClass, Container, isValid } from '@vodyani/core';
+import { Class, StoreContainer } from '@vodyani/core';
 
-export class VOContainer implements Container {
-  private static readonly container: Map<string, BaseClass> = new Map();
+export class VOContainer implements StoreContainer {
+  private static readonly container: Map<string, Class> = new Map();
 
   public static registry(name: string, target: any) {
-    if (isValid(name) && isValid(target)) {
+    if (name && target) {
       this.container.set(name, target);
     }
   }

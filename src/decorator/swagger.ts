@@ -1,6 +1,6 @@
+import { Class } from '@vodyani/core';
 import { Type, applyDecorators } from '@nestjs/common';
 import { ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
-import { BaseClass } from '@vodyani/core';
 
 import { VOContainer } from '../base';
 
@@ -8,7 +8,7 @@ export function SwaggerVo(target: any) {
   VOContainer.registry(target?.name, target);
 }
 
-export function getApiResponseVo<T extends Type<any>>(responseBodyVo: BaseClass) {
+export function getApiResponseVo<T extends Type<any>>(responseBodyVo: Class) {
   return function (swaggerVo?: T) {
     return applyDecorators(
       ApiOkResponse({
@@ -29,7 +29,7 @@ export function getApiResponseVo<T extends Type<any>>(responseBodyVo: BaseClass)
   };
 }
 
-export function getApiArrayResponseVo<T extends Type<any>>(responseBodyVo: BaseClass) {
+export function getApiArrayResponseVo<T extends Type<any>>(responseBodyVo: Class) {
   return function (swaggerVo?: T) {
     return applyDecorators(
       ApiOkResponse({
@@ -50,7 +50,7 @@ export function getApiArrayResponseVo<T extends Type<any>>(responseBodyVo: BaseC
   };
 }
 
-export function getApiPaginationResponseVo<T extends Type<any>>(responseBodyVo: BaseClass, paginationInfoVo: BaseClass) {
+export function getApiPaginationResponseVo<T extends Type<any>>(responseBodyVo: Class, paginationInfoVo: Class) {
   return function (swaggerVo?: T) {
     return applyDecorators(
       ApiOkResponse({

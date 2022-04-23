@@ -1,8 +1,8 @@
-import { BaseClass } from '@vodyani/core';
+import { Class } from '@vodyani/core';
 import { OpenAPIObject, SwaggerDocumentOptions } from '@nestjs/swagger';
 
 export interface BaseSwaggerOptions {
-  extraModels: BaseClass[];
+  extraModels: Class[];
   documentRouter?: string;
   documentOptions?: SwaggerDocumentOptions;
   documentConfig?: Omit<OpenAPIObject, 'paths'>;
