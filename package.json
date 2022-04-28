@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@nestjs/swagger": "5.2.1",
-    "@vodyani/core": "0.3.7",
+    "@vodyani/core": "8.0.1",
     "@vodyani/transformer": "0.5.3",
     "swagger-ui-express": "4.3.0"
   },
