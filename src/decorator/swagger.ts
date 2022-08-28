@@ -1,6 +1,6 @@
 import { Class } from '@vodyani/core';
 import { Type, applyDecorators } from '@nestjs/common';
-import { ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
+import { ApiBody, ApiConsumes, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
 
 import { VOContainer } from '../base';
 
@@ -83,4 +83,11 @@ export function getApiPaginationResponseVo<T extends Type<any>>(responseBodyVo: 
       }),
     );
   };
+}
+
+export function ApiFormData(options: any) {
+  return applyDecorators(
+    ApiConsumes('multipart/form-data'),
+    ApiBody(options),
+  );
 }
