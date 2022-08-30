@@ -1,12 +1,14 @@
 # Vodyani swagger
 
-*swagger*
+📚 Vodyani swagger 内聚了 open-api 开发中常用的装饰器、方法和模块，并支持动态加载 extra model。
 
-[![Npm](https://img.shields.io/npm/v/@vodyani/swagger)](https://www.npmjs.com/package/@vodyani/swagger)
-[![Npm](https://img.shields.io/npm/dm/@vodyani/swagger)](https://www.npmjs.com/package/@vodyani/swagger)
+[![Npm](https://img.shields.io/npm/v/@vodyani/swagger/latest.svg)](https://www.npmjs.com/package/@vodyani/ark)
+[![Npm](https://img.shields.io/npm/v/@vodyani/swagger/beta.svg)](https://www.npmjs.com/package/@vodyani/ark)
+[![Npm](https://img.shields.io/npm/dm/@vodyani/swagger)](https://www.npmjs.com/package/@vodyani/ark)
 [![License](https://img.shields.io/github/license/vodyani/swagger)](LICENSE)
+<br>
 ![Workflow](https://github.com/vodyani/swagger/actions/workflows/release.yml/badge.svg)
-[![Known Vulnerabilities](https://snyk.io/test/github/vodyani/swagger/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vodyani/swagger?targetFile=package.json)
+[![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
 ## Installation
 
@@ -14,15 +16,20 @@
 npm install @vodyani/swagger
 ```
 
-## Recommendations
+## Getting started
 
-- typescript `v4.6.x`
-- node.js `v12.x` ~ `v16.x`
+- [使用文档 📚](https://vodyani.vercel.app/docs/other/swagger)
+- [Documentation 📚](https://vodyani.vercel.app/en/docs/other/swagger)
 
-## Dependencies
+## Questions
 
-- [nestjs swagger](https://github.com/nestjs/swagger) `v0.26`
-- [swagger-ui-express](https://github.com/scottie1984/swagger-ui-express) `v4`
+- [Discussions 🧐](https://github.com/vodyani/swagger/discussions)
+
+## Team
+
+|[![ChoGathK](https://github.com/chogathK.png?size=100)](https://github.com/chogathK)|
+|:-:|
+|[ChoGathK](https://github.com/chogathK)|
 
 ## License
 

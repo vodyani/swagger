@@ -1,24 +1,23 @@
-import { Class } from '@vodyani/core';
-import { Type, applyDecorators } from '@nestjs/common';
+import { Type, applyDecorators } from '@vodyani/core';
 import { ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
 
-import { VOContainer } from '../base';
+import { ExtraModelStore } from './struct';
 
-export function SwaggerVo(target: any) {
-  VOContainer.registry(target?.name, target);
+export function SwaggerEntity(target: any) {
+  ExtraModelStore.set(target?.name, target);
 }
 
-export function getApiResponseVo<T extends Type<any>>(responseBodyVo: Class) {
-  return function (swaggerVo?: T) {
+export function getResponseVo<T = any>(ResponseBodyVo: Type<T>) {
+  return function(Vo?: Type<T>) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
           allOf: [
-            { $ref: getSchemaPath(responseBodyVo) },
+            { $ref: getSchemaPath(ResponseBodyVo) },
             {
               properties: {
-                data: swaggerVo
-                  ? { $ref: getSchemaPath(swaggerVo) }
+                data: Vo
+                  ? { $ref: getSchemaPath(Vo) }
                   : { type: 'object' },
               },
             },
@@ -29,17 +28,17 @@ export function getApiResponseVo<T extends Type<any>>(responseBodyVo: Class) {
   };
 }
 
-export function getApiArrayResponseVo<T extends Type<any>>(responseBodyVo: Class) {
-  return function (swaggerVo?: T) {
+export function getArrayResponseVo<T = any>(ResponseBodyVo: Type<T>) {
+  return function(Vo?: Type<T>) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
           allOf: [
-            { $ref: getSchemaPath(responseBodyVo) },
+            { $ref: getSchemaPath(ResponseBodyVo) },
             {
               properties: {
-                data: swaggerVo
-                  ? { type: 'array', $ref: getSchemaPath(swaggerVo) }
+                data: Vo
+                  ? { type: 'array', $ref: getSchemaPath(Vo) }
                   : { type: 'object' },
               },
             },
@@ -50,27 +49,27 @@ export function getApiArrayResponseVo<T extends Type<any>>(responseBodyVo: Class
   };
 }
 
-export function getApiPaginationResponseVo<T extends Type<any>>(responseBodyVo: Class, paginationInfoVo: Class) {
-  return function (swaggerVo?: T) {
+export function getPaginationResponseVo<T = any, P = any>(ResponseBodyVo: Type<T>, PageVo: Type<P>) {
+  return function(Vo?: Type) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
           allOf: [
-            { $ref: getSchemaPath(responseBodyVo) },
+            { $ref: getSchemaPath(ResponseBodyVo) },
             {
               properties: {
                 data: {
                   allOf: [
                     {
                       properties: {
-                        page: { $ref: getSchemaPath(paginationInfoVo) },
+                        page: { $ref: getSchemaPath(PageVo) },
                       },
                     },
                     {
                       properties: {
                         rows: {
                           type: 'array',
-                          items: { $ref: getSchemaPath(swaggerVo) },
+                          items: { $ref: getSchemaPath(Vo) },
                         },
                       },
                     },
