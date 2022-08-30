@@ -1,7 +1,7 @@
 {
   "name": "@vodyani/swagger",
   "license": "MIT",
-  "version": "8.0.1",
+  "version": "8.1.0-beta.1",
   "author": "ChoGathK",
   "description": "swagger",
   "homepage": "https://github.com/vodyani/swagger#readme",
@@ -13,6 +13,7 @@
     "vodyani",
     "nodejs",
     "swagger",
+    "open-api",
     "javascript",
     "typescript",
     "npm-package"
@@ -28,25 +29,24 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "patch": "npm version patch",
-    "minor": "npm version minor",
-    "major": "npm version major",
-    "install:all": "npm i && npm i @vodyani/eslint-config -D && npx husky install",
+    "local": "npm i && npm i @vodyani/eslint-config -D && npx husky install",
     "build": "rm -rf dist && tsc",
+    "clear": "rm -rf ./logs && rm -rf ./test/temp",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "eslint ./src && tsc",
     "lint:fix": "eslint --fix --ext .ts src/ test/",
-    "lint:html-report": "eslint ./src ./test -f html -o eslint-report.html",
-    "lint:json-report": "eslint ./src ./test -f json -o eslint-report.json"
+    "lint:html-report": "eslint ./src -f html -o eslint-report.html",
+    "lint:json-report": "eslint ./src -f json -o eslint-report.json"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+  "publishConfig": {
+    "access": "public"
   },
   "eslintConfig": {
     "extends": "@vodyani"
+  },
+  "commitlint": {
+    "extends": "@commitlint/config-conventional"
   },
   "jest": {
     "testEnvironment": "node",
@@ -64,8 +64,7 @@
   },
   "dependencies": {
     "@nestjs/swagger": "5.2.1",
-    "@vodyani/core": "8.0.1",
-    "@vodyani/transformer": "0.5.3",
+    "@vodyani/core": "^8.6.0",
     "swagger-ui-express": "4.3.0"
   },
   "peerDependencies": {
@@ -73,16 +72,18 @@
     "swagger-ui-express": "4.3.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "16.2.3",
-    "@commitlint/config-conventional": "16.2.1",
-    "@types/jest": "27.4.1",
-    "@types/node": "16.11.26",
-    "@types/supertest": "2.0.11",
-    "@vodyani/eslint-config": "^1.0.9",
+    "@commitlint/cli": "16.3.0",
+    "@commitlint/config-conventional": "16.2.4",
+    "@nestjs/testing": "8.4.7",
+    "@types/jest": "27.5.2",
+    "@types/multer": "1.4.7",
+    "@types/node": "16.11.56",
+    "@types/supertest": "2.0.12",
+    "@vodyani/eslint-config": "^1.1.0",
     "husky": "7.0.4",
     "jest": "27.5.1",
-    "supertest": "6.2.2",
-    "ts-jest": "27.1.3",
-    "typescript": "4.6.3"
+    "supertest": "6.2.4",
+    "ts-jest": "27.1.5",
+    "typescript": "4.8.2"
   }
 }
