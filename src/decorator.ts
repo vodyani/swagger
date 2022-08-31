@@ -1,10 +1,17 @@
 import { Type, applyDecorators } from '@vodyani/core';
-import { ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
+import { ApiBody, ApiConsumes, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
 
 import { ExtraModelStore } from './struct';
 
 export function SwaggerEntity(target: any) {
   ExtraModelStore.set(target?.name, target);
+}
+
+export function ApiFormData(options: any) {
+  return applyDecorators(
+    ApiConsumes('multipart/form-data'),
+    ApiBody(options),
+  );
 }
 
 export function getResponseVo<T = any>(ResponseBodyVo: Type<T>) {
