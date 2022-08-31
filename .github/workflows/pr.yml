@@ -7,3 +7,5 @@ on:
 jobs:
   check:
     uses: vodyani/workflows/.github/workflows/check.yml@master
+    with:
+      enable_test: false
