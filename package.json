@@ -69,7 +69,6 @@
     "swagger-ui-express": "4.3.0"
   },
   "peerDependencies": {
-    "@nestjs/swagger": "5.2.1",
     "swagger-ui-express": "4.3.0"
   },
   "devDependencies": {
