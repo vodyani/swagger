@@ -14,8 +14,8 @@ export function ApiFormData(options: any) {
   );
 }
 
-export function getResponseVo<T = any>(ResponseBodyVo: Type<T>) {
-  return function(Vo?: Type<T>) {
+export function getResponseVo(ResponseBodyVo: Type) {
+  return function(Vo?: Type) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
@@ -35,8 +35,8 @@ export function getResponseVo<T = any>(ResponseBodyVo: Type<T>) {
   };
 }
 
-export function getArrayResponseVo<T = any>(ResponseBodyVo: Type<T>) {
-  return function(Vo?: Type<T>) {
+export function getArrayResponseVo(ResponseBodyVo: Type) {
+  return function(Vo?: Type) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
@@ -56,7 +56,7 @@ export function getArrayResponseVo<T = any>(ResponseBodyVo: Type<T>) {
   };
 }
 
-export function getPaginationResponseVo<T = any, P = any>(ResponseBodyVo: Type<T>, PageVo: Type<P>) {
+export function getPaginationResponseVo(ResponseBodyVo: Type, PageVo: Type) {
   return function(Vo?: Type) {
     return applyDecorators(
       ApiOkResponse({
