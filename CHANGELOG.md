@@ -1,3 +1,10 @@
+## [8.1.1](https://github.com/vodyani/swagger/compare/v8.1.0...v8.1.1) (2022-08-31)
+
+
+### Bug Fixes
+
+* add form data api decorator ([bef2bf2](https://github.com/vodyani/swagger/commit/bef2bf2baea4b23aee3e664f00b212dbec6013b2))
+
 # [8.1.0](https://github.com/vodyani/swagger/compare/v8.0.1...v8.1.0) (2022-08-30)
 
 
