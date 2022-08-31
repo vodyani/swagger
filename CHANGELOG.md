@@ -1,3 +1,10 @@
+## [8.1.2](https://github.com/vodyani/swagger/compare/v8.1.1...v8.1.2) (2022-08-31)
+
+
+### Bug Fixes
+
+* remove invalid type ([673fe55](https://github.com/vodyani/swagger/commit/673fe5542cbb0b8d88aa79b7a00f125967549bbd))
+
 ## [8.1.1](https://github.com/vodyani/swagger/compare/v8.1.0...v8.1.1) (2022-08-31)
 
 
