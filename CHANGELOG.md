@@ -1,3 +1,10 @@
+## [8.1.3](https://github.com/vodyani/swagger/compare/v8.1.2...v8.1.3) (2022-08-31)
+
+
+### Bug Fixes
+
+* add extra model ([00132e3](https://github.com/vodyani/swagger/commit/00132e3a783c36a53ec2be0366aa96d133d8fb08))
+
 ## [8.1.2](https://github.com/vodyani/swagger/compare/v8.1.1...v8.1.2) (2022-08-31)
 
 
