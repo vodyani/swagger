@@ -31,6 +31,8 @@ npm install @vodyani/swagger
 |:-:|
 |[ChoGathK](https://github.com/chogathK)|
 
+![Alt](https://repobeats.axiom.co/api/embed/626cc74ad291885e9eb15d9986c2ce4977748949.svg "Repobeats analytics image")
+
 ## License
 
 Vodyani swagger is [MIT licensed](LICENSE).
