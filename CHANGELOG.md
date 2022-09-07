@@ -1,3 +1,10 @@
+## [8.1.4](https://github.com/vodyani/swagger/compare/v8.1.3...v8.1.4) (2022-09-07)
+
+
+### Bug Fixes
+
+* deps ([3fdcecf](https://github.com/vodyani/swagger/commit/3fdcecfbedfdcaf6887ce84aeede7ccde22cd5ce))
+
 ## [8.1.3](https://github.com/vodyani/swagger/compare/v8.1.2...v8.1.3) (2022-08-31)
 
 
