@@ -18,8 +18,8 @@ npm install @vodyani/swagger
 
 ## Getting started
 
-- [使用文档 📚](https://vodyani.vercel.app/docs/other/swagger)
-- [Documentation 📚](https://vodyani.vercel.app/en/docs/other/swagger)
+- [使用文档 📚](https://vodyani.netlify.app/docs/other/swagger)
+- [Documentation 📚](https://vodyani.netlify.app/en/docs/other/swagger)
 
 ## Questions
 
