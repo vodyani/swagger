@@ -1,3 +1,10 @@
+# [8.2.0-beta.1](https://github.com/vodyani/swagger/compare/v8.1.4...v8.2.0-beta.1) (2022-09-24)
+
+
+### Features
+
+* remove custom registration decorators and reduce base dependencies ([642fcbd](https://github.com/vodyani/swagger/commit/642fcbdfd1cf097dc5bd073df08de052dbeea9ef))
+
 ## [8.1.4](https://github.com/vodyani/swagger/compare/v8.1.3...v8.1.4) (2022-09-07)
 
 
