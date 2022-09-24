@@ -1,4 +1,4 @@
-import { Type, applyDecorators } from '@vodyani/core';
+import { Type, applyDecorators } from '@nestjs/common';
 import { ApiBody, ApiConsumes, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
 
 import { ExtraModelStore } from './struct';

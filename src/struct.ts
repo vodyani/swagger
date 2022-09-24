@@ -1,4 +1,4 @@
-import { Type } from '@vodyani/core';
+import { Type } from '@nestjs/common';
 
 export class ExtraModelStore {
   private static readonly store: Map<string, Type> = new Map();
