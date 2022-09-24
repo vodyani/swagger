@@ -18,8 +18,8 @@ npm install @vodyani/swagger
 
 ## Getting started
 
-- [使用文档 📚](https://vodyani.vercel.app/docs/other/swagger)
-- [Documentation 📚](https://vodyani.vercel.app/en/docs/other/swagger)
+- [使用文档 📚](https://vodyani.netlify.app/docs/other/swagger)
+- [Documentation 📚](https://vodyani.netlify.app/en/docs/other/swagger)
 
 ## Questions
 
@@ -30,6 +30,8 @@ npm install @vodyani/swagger
 |[![ChoGathK](https://github.com/chogathK.png?size=100)](https://github.com/chogathK)|
 |:-:|
 |[ChoGathK](https://github.com/chogathK)|
+
+![Alt](https://repobeats.axiom.co/api/embed/626cc74ad291885e9eb15d9986c2ce4977748949.svg "Repobeats analytics image")
 
 ## License
 

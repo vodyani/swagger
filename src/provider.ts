@@ -1,5 +1,7 @@
-import { Injectable, INestApplication } from '@vodyani/core';
-import { SwaggerDocumentOptions, SwaggerModule, OpenAPIObject, DocumentBuilder } from '@nestjs/swagger';
+import { Injectable, INestApplication } from '@nestjs/common';
+import { SwaggerDocumentOptions, SwaggerModule as Swagger, OpenAPIObject, DocumentBuilder } from '@nestjs/swagger';
+
+import { ExtraModelStore } from './struct';
 
 @Injectable()
 export class SwaggerProvider {
@@ -13,8 +15,12 @@ export class SwaggerProvider {
     config: Omit<OpenAPIObject, 'paths'>,
     options?: SwaggerDocumentOptions,
   ) {
-    const document = SwaggerModule.createDocument(application, config, options);
+    const document = Swagger.createDocument(
+      application,
+      config,
+      { extraModels: ExtraModelStore.get(), ...options },
+    );
 
-    SwaggerModule.setup(path, application, document);
+    Swagger.setup(path, application, document);
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "@vodyani/swagger",
   "license": "MIT",
-  "version": "8.1.0-beta.1",
+  "version": "8.1.4",
   "author": "ChoGathK",
   "description": "swagger",
   "homepage": "https://github.com/vodyani/swagger#readme",
@@ -63,12 +63,12 @@
     ]
   },
   "dependencies": {
+    "@nestjs/common": "^8.4.7",
     "@nestjs/swagger": "5.2.1",
-    "@vodyani/core": "^8.6.0",
-    "swagger-ui-express": "4.3.0"
+    "@vodyani/core": "^8.8.0",
+    "@vodyani/utils": "^8.5.2"
   },
   "peerDependencies": {
-    "@nestjs/swagger": "5.2.1",
     "swagger-ui-express": "4.3.0"
   },
   "devDependencies": {

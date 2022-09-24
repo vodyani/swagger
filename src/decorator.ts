@@ -1,5 +1,5 @@
-import { Type, applyDecorators } from '@vodyani/core';
-import { ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
+import { Type, applyDecorators } from '@nestjs/common';
+import { ApiBody, ApiConsumes, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
 
 import { ExtraModelStore } from './struct';
 
@@ -7,8 +7,15 @@ export function SwaggerEntity(target: any) {
   ExtraModelStore.set(target?.name, target);
 }
 
-export function getResponseVo<T = any>(ResponseBodyVo: Type<T>) {
-  return function(Vo?: Type<T>) {
+export function ApiFormData(options: any) {
+  return applyDecorators(
+    ApiConsumes('multipart/form-data'),
+    ApiBody(options),
+  );
+}
+
+export function getResponseVo(ResponseBodyVo: Type) {
+  return function(Vo?: Type) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
@@ -28,8 +35,8 @@ export function getResponseVo<T = any>(ResponseBodyVo: Type<T>) {
   };
 }
 
-export function getArrayResponseVo<T = any>(ResponseBodyVo: Type<T>) {
-  return function(Vo?: Type<T>) {
+export function getArrayResponseVo(ResponseBodyVo: Type) {
+  return function(Vo?: Type) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
@@ -49,7 +56,7 @@ export function getArrayResponseVo<T = any>(ResponseBodyVo: Type<T>) {
   };
 }
 
-export function getPaginationResponseVo<T = any, P = any>(ResponseBodyVo: Type<T>, PageVo: Type<P>) {
+export function getPaginationResponseVo(ResponseBodyVo: Type, PageVo: Type) {
   return function(Vo?: Type) {
     return applyDecorators(
       ApiOkResponse({

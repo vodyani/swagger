@@ -1,10 +1,10 @@
-import { Infrastructure } from '@vodyani/core';
+import { Module } from '@nestjs/common';
 
 import { SwaggerProvider } from './provider';
 
-@Infrastructure({
-  provider: [SwaggerProvider],
-  export: [SwaggerProvider],
+@Module({
+  providers: [SwaggerProvider],
+  exports: [SwaggerProvider],
 })
-export class SwaggerInfrastructure {}
+export class SwaggerModule {}
 
