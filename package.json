@@ -64,9 +64,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.4.7",
-    "@nestjs/swagger": "5.2.1",
-    "@vodyani/core": "^8.8.0",
-    "@vodyani/utils": "^8.5.2"
+    "@nestjs/swagger": "5.2.1"
   },
   "peerDependencies": {
     "swagger-ui-express": "4.3.0"
