@@ -1,3 +1,10 @@
+## [8.2.1](https://github.com/vodyani/swagger/compare/v8.2.0...v8.2.1) (2022-10-15)
+
+
+### Bug Fixes
+
+* setup flow ([fe43fcf](https://github.com/vodyani/swagger/commit/fe43fcff1eea8ea5c20516e768c79f02fcb636fc))
+
 # [8.2.0](https://github.com/vodyani/swagger/compare/v8.1.4...v8.2.0) (2022-09-24)
 
 
