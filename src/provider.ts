@@ -1,26 +1,33 @@
 import { Injectable, INestApplication } from '@nestjs/common';
-import { SwaggerDocumentOptions, SwaggerModule as Swagger, OpenAPIObject, DocumentBuilder } from '@nestjs/swagger';
+import { SwaggerDocumentOptions, SwaggerModule as Swagger, OpenAPIObject } from '@nestjs/swagger';
 
+import { SwaggerOptions } from './common';
 import { ExtraModelStore } from './struct';
 
 @Injectable()
 export class SwaggerProvider {
-  public getConfigBuilder() {
-    return new DocumentBuilder();
+  private options: SwaggerOptions;
+
+  public setPath(path: string) {
+    this.options.path = path;
+    return this;
   }
 
-  public setup(
-    path: string,
-    application: INestApplication,
-    config: Omit<OpenAPIObject, 'paths'>,
-    options?: SwaggerDocumentOptions,
-  ) {
-    const document = Swagger.createDocument(
-      application,
-      config,
-      { extraModels: ExtraModelStore.get(), ...options },
-    );
+  public setNestApplication(app: INestApplication) {
+    this.options.app = app;
+    return this;
+  }
 
-    Swagger.setup(path, application, document);
+  public setConfig(config: Omit<OpenAPIObject, 'paths'>) {
+    this.options.config = config;
+    return this;
+  }
+
+  public setup(options?: SwaggerDocumentOptions) {
+    const { app, config, path } = this.options;
+    const documentOptions = { extraModels: ExtraModelStore.get(), ...options };
+    const document = Swagger.createDocument(app, config, documentOptions);
+
+    Swagger.setup(path, app, document);
   }
 }
