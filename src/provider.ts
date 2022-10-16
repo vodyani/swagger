@@ -6,7 +6,7 @@ import { ExtraModelStore } from './struct';
 
 @Injectable()
 export class SwaggerProvider {
-  private options: SwaggerOptions;
+  private options: SwaggerOptions = Object();
 
   public setPath(path: string) {
     this.options.path = path;
