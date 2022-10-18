@@ -1,3 +1,10 @@
+## [8.2.4](https://github.com/vodyani/swagger/compare/v8.2.3...v8.2.4) (2022-10-18)
+
+
+### Bug Fixes
+
+* modify decorator name ([10cfa0b](https://github.com/vodyani/swagger/commit/10cfa0bed275fcc5342965f023d324f869d895d2))
+
 ## [8.2.3](https://github.com/vodyani/swagger/compare/v8.2.2...v8.2.3) (2022-10-18)
 
 
