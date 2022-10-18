@@ -7,17 +7,17 @@ export function SwaggerEntity(target: any) {
   ExtraModelStore.set(target?.name, target);
 }
 
-export function getResponseVo(ResponseBodyVo: Type) {
-  return function(Vo?: Type) {
+export function getResponseVO(ResponseBodyVO: Type) {
+  return function(VO?: Type) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
           allOf: [
-            { $ref: getSchemaPath(ResponseBodyVo) },
+            { $ref: getSchemaPath(ResponseBodyVO) },
             {
               properties: {
-                data: Vo
-                  ? { $ref: getSchemaPath(Vo) }
+                data: VO
+                  ? { $ref: getSchemaPath(VO) }
                   : { type: 'object' },
               },
             },
@@ -28,17 +28,17 @@ export function getResponseVo(ResponseBodyVo: Type) {
   };
 }
 
-export function getArrayResponseVo(ResponseBodyVo: Type) {
-  return function(Vo?: Type) {
+export function getArrayResponseVO(ResponseBodyVO: Type) {
+  return function(VO?: Type) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
           allOf: [
-            { $ref: getSchemaPath(ResponseBodyVo) },
+            { $ref: getSchemaPath(ResponseBodyVO) },
             {
               properties: {
-                data: Vo
-                  ? { type: 'array', $ref: getSchemaPath(Vo) }
+                data: VO
+                  ? { type: 'array', $ref: getSchemaPath(VO) }
                   : { type: 'object' },
               },
             },
@@ -49,27 +49,27 @@ export function getArrayResponseVo(ResponseBodyVo: Type) {
   };
 }
 
-export function getPaginationResponseVo(ResponseBodyVo: Type, PageVo: Type) {
-  return function(Vo?: Type) {
+export function getPaginationResponseVO(ResponseBodyVO: Type, PageVO: Type) {
+  return function(VO?: Type) {
     return applyDecorators(
       ApiOkResponse({
         schema: {
           allOf: [
-            { $ref: getSchemaPath(ResponseBodyVo) },
+            { $ref: getSchemaPath(ResponseBodyVO) },
             {
               properties: {
                 data: {
                   allOf: [
                     {
                       properties: {
-                        page: { $ref: getSchemaPath(PageVo) },
+                        page: { $ref: getSchemaPath(PageVO) },
                       },
                     },
                     {
                       properties: {
                         rows: {
                           type: 'array',
-                          items: { $ref: getSchemaPath(Vo) },
+                          items: { $ref: getSchemaPath(VO) },
                         },
                       },
                     },
