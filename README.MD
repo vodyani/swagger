@@ -1,6 +1,6 @@
 # Vodyani swagger
 
-📚 Vodyani swagger 内聚了开发中常用的文档装饰器、方法和模块，并支持动态加载 swagger extra model。
+📚 swagger 内聚了开发中常用的文档装饰器、方法和模块，并支持动态加载 extra model。
 
 [![Npm](https://img.shields.io/npm/v/@vodyani/swagger/latest.svg)](https://www.npmjs.com/package/@vodyani/ark)
 [![Npm](https://img.shields.io/npm/v/@vodyani/swagger/beta.svg)](https://www.npmjs.com/package/@vodyani/ark)
